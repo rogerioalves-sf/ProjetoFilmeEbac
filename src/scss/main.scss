@@ -1,0 +1,198 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    list-style-type: none;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 100px;
+    z-index: 1000;
+        img {
+            max-width: 100%;
+        }
+        .logo {
+            max-width: 250px;
+        }
+        .toggle {
+            max-width: 60px;
+            cursor: pointer;
+        }
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 100px;
+    background: url(/src/imagens/homem-aranha-2.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .content {
+        max-width: 550px;
+
+        h2 {
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: 2.5em;
+            letter-spacing: 0.1em;
+            color: #fff;
+        }
+
+        p {
+            font-size: 1.2em;
+            font-weight: 300;
+            letter-spacing: 0.02em;
+            line-height: 1.5em;
+            color: #fff;
+            margin: 15px 0px 35px;
+        }
+
+        .play {
+            position: relative;
+            display: inline-flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 500;
+            text-decoration: none;
+            letter-spacing: 2px;
+            font-size: 1.2em;
+
+            img {
+                margin-right: 10px;
+                max-width: 50px;
+            }
+        }
+
+    }
+
+    .lista {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 20px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        display: flex;
+    }
+
+    .lista li {
+        list-style: none;
+    }
+    
+    .lista li a {
+        text-decoration: none;
+    }
+
+    .lista li a img {
+        filter: invert(1);
+        transform: scale(0.6);
+    }
+
+    .trailer {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10000;
+        background: rgba(0,0,0,0.95);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        visibility: hidden;
+        opacity: 0;
+
+        .close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            cursor: pointer;
+            filter: invert(1);
+            max-width: 32px;
+        }
+
+        .video {
+            max-width: 900px;
+            outline: none;
+        }
+    }
+
+    .trailer.active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+}
+
+@media (max-width: 991px) {
+    header {
+        padding: 20px 50px;
+    }
+
+    header .toggle {
+        max-width: 40px;
+    }
+
+    .banner {
+        padding: 100px 50px;
+    }
+
+    .banner .content h2 {
+        font-weight: 400;
+        font-size: 2em;
+        letter-spacing: 0.05em;
+    }
+    .banner .content p {
+        font-size: 1em;
+    }
+
+    .slide {
+        position: relative;
+        bottom: initial;
+        left: 0;
+        width: 250px;
+        height: 150px;
+        margin: 20px 0;
+    }
+
+    .lista {
+        position: absolute;
+        top: initial;
+        right: initial;
+        margin-top: 40px;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .lista li {
+        list-style: none;
+        margin: 0 5px;
+        display: block;
+    }
+
+    .trailer .video {
+        max-width: 90%;
+        outline: none;
+    }
+}
